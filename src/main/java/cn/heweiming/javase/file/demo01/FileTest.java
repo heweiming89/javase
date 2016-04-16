@@ -9,13 +9,11 @@ public class FileTest {
 
 	@Test
 	public void testFile01() throws IOException {
-
 		File file = new File(".");
 		File[] files = file.listFiles();
 		for (File f : files) { // System.out.println(f.getAbsolutePath());
 			System.out.println(f.getCanonicalPath());
 		}
-
 	}
 
 	@Test

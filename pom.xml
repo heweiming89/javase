@@ -81,6 +81,12 @@
 			<version>${slf4j.version}</version>
 		</dependency>
 
+		<!-- BeanUtils -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.2</version>
+		</dependency>
 
 
 

@@ -13,6 +13,8 @@ public class FileDemo {
 
 	@Test
 	public void writeFile() throws IOException {
+		
+		Class clazz = null;
 		OutputStream ourputStream = new FileOutputStream(new File(
 				"E:/temp/CREDIT_REQ_2016040801"), true);
 		OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
