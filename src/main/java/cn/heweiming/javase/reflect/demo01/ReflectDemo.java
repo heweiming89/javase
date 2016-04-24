@@ -5,9 +5,7 @@ import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -69,7 +67,7 @@ public class ReflectDemo {
 		Map<Integer, Object> objMap = (Map<Integer, Object>) mapping.get(0);
 		Map<String, Object> fieldMap = (Map<String, Object>) mapping.get(1);
 		// 1720-02-07
-		String dataStr = "曾阿牛|男|27|1200.7200|";
+		String dataStr = "曾阿牛|男|27|1200.7200|1720年02-07";
 		String[] fields = dataStr.split("\\|");
 		System.out.println(fields.length);
 		for (int i = 0; i < fields.length; i++) {
@@ -92,7 +90,7 @@ public class ReflectDemo {
 		}
 		System.out.println(fieldMap);
 		Person person = new Person();
-		ConvertUtils.register(new DateConverter("yyyy-MM-dd"),
+		ConvertUtils.register(new DateConverter("yyyy年MM-dd"),
 				java.util.Date.class);
 		BeanUtils.populate(person, fieldMap);
 		System.out.println(person);
@@ -129,5 +127,6 @@ public class ReflectDemo {
 		}
 
 	}
+	
 
 }

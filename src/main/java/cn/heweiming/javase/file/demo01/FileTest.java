@@ -59,5 +59,15 @@ public class FileTest {
 			processingFile.delete();
 		}
 	}
+	
+	@Test
+	public void testGetFilePath() throws IOException{
+		File file = new File(".");
+		System.out.println(file.getAbsolutePath());
+		System.out.println(file.getCanonicalPath());
+		
+		
+		
+	}
 
 }
