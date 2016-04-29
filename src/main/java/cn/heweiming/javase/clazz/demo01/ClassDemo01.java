@@ -2,7 +2,7 @@ package cn.heweiming.javase.clazz.demo01;
 
 import org.junit.Test;
 
-public class ClassDemo01 {
+public class ClassDemo01 implements java.io.Serializable {
 
 	@Test
 	public void test01() {

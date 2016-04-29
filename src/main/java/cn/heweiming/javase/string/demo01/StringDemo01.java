@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.Test;
@@ -123,4 +124,15 @@ public class StringDemo01 {
 		String string = str.substring(length - 2, length);
 		System.out.println(string);
 	}
+
+	@Test
+	public void testFormat() {
+		String template = "";
+		Calendar c = Calendar.getInstance();
+		String s = String.format("Duke's Birthday:%1$tY年%1$tm月%1$te日,", c);
+		s = String.format("%1$tF %1$tT", c);
+		System.out.println(s);
+
+	}
+
 }
