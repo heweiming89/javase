@@ -3,7 +3,7 @@ package cn.heweiming.javase.number.demo01;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class NumberFormaterDemo01 {
+public class NumberDemo01 {
 
 	
 	
