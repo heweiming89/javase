@@ -1,6 +1,8 @@
 package cn.heweiming.javase.object.demo01;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
 
 	public static class Home {
 
@@ -29,6 +31,21 @@ public class Person {
 			this.tel = tel;
 		}
 
+		@Override
+		public String toString() {
+			return "Home [address=" + address + ", tel=" + tel + "]";
+		}
+
+	}
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public static void main(String[] args) {
+		Person p = new Person("张三");
+		p.setHome(new Person.Home("上海", "021"));
 	}
 
 	private String name;
@@ -56,9 +73,9 @@ public class Person {
 		this.name = name;
 	}
 
-	public static void main(String[] args) {
-		Person p = new Person("张三");
-		p.setHome(new Person.Home("上海", "021"));
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", home=" + home + "]";
 	}
 
 }

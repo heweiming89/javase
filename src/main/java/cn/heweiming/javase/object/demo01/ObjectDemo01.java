@@ -11,6 +11,9 @@ import java.util.Objects;
 
 import org.junit.Test;
 
+import cn.heweiming.javase.object.demo01.Person.Home;
+import cn.heweiming.javase.util.ObjectUtils;
+
 public class ObjectDemo01 {
 
 	@Test
@@ -33,18 +36,15 @@ public class ObjectDemo01 {
 
 	@Test
 	public void testClone() throws IOException, ClassNotFoundException {
-		Person obj = new Person("张三");
-		obj.setHome(new Person.Home("上海", "123456"));
-		Person person = null;
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		ObjectOutputStream oos = new ObjectOutputStream(baos);
-		oos.writeObject(obj);
-		oos.close();
-		ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-		ObjectInputStream ois = new ObjectInputStream(bais);
-		person = (Person) ois.readObject();
-		ois.close();
-		Objects
+		Person person = new Person("张三");
+		person.setHome(new Person.Home("上海", "123456"));
+		Person cloneP1 = ObjectUtils.clone(person);
+		Person cloneP2 = ObjectUtils.clone(person);
+		cloneP1.setHome(new Person.Home("北京","5424343"));
+		System.out.println(cloneP1);
+		System.out.println(cloneP2);
+		
+		
 	}
 
 }

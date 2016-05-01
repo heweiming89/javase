@@ -1,4 +1,4 @@
-package java.util;
+package cn.heweiming.javase.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
