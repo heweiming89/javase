@@ -1,9 +1,5 @@
 package cn.heweiming.javase.serializable.demo01;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 
 public class Person implements java.io.Serializable {
 

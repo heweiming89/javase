@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,11 +41,13 @@ public class ObjectDemo01 {
 		person.setHome(new Person.Home("上海", "123456"));
 		Person cloneP1 = ObjectUtils.clone(person);
 		Person cloneP2 = ObjectUtils.clone(person);
-		cloneP1.setHome(new Person.Home("北京","5424343"));
+		cloneP1.setHome(new Person.Home("北京", "5424343"));
 		System.out.println(cloneP1);
 		System.out.println(cloneP2);
+
+		int[] array = new int[8];
 		
-		
+		System.out.println(Arrays.toString(array));
 	}
 
 }

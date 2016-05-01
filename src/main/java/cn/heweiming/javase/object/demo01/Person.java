@@ -4,7 +4,12 @@ import java.io.Serializable;
 
 public class Person implements Serializable {
 
-	public static class Home {
+	public static class Home implements Serializable {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 
 		private String address;
 
