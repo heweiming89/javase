@@ -48,8 +48,8 @@ public class StringDemo01 {
 	@Test
 	public void parseStr() throws IOException {
 		File file = new File("D:/CREDIT_RES_ACC_2016041501.txt");
-		BufferedReader br = new BufferedReader(new InputStreamReader(
-				new FileInputStream(file)));
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(
+				file)));
 		String dataStr = "";
 		while ((dataStr = br.readLine()) != null) {
 			String[] strings = dataStr.split("\\|");
@@ -133,6 +133,12 @@ public class StringDemo01 {
 		s = String.format("%1$tF %1$tT", c);
 		System.out.println(s);
 
+	}
+
+	@Test
+	public void testRex() {
+		String number = "-5";
+		System.out.println(number.matches("\\d*"));
 	}
 
 }
