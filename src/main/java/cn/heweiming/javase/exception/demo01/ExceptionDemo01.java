@@ -23,15 +23,29 @@ public class ExceptionDemo01 {
 		// int b = 0;
 		// System.out.println(a / b);
 
-		String dateStr = "2016-04-12";
-		SimpleDateFormat sdf = new SimpleDateFormat();
-		sdf.applyPattern("yyyy-MM-dd");
-		Date date = sdf.parse(dateStr);
-		System.out.println(date);
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(date);
-		System.out.println(calendar.getTimeInMillis());
+		// String dateStr = "2016-04-12";
+		// SimpleDateFormat sdf = new SimpleDateFormat();
+		// sdf.applyPattern("yyyy-MM-dd");
+		// Date date = sdf.parse(dateStr);
+		// System.out.println(date);
+		// Calendar calendar = Calendar.getInstance();
+		// calendar.setTime(date);
+		// System.out.println(calendar.getTimeInMillis());
+		try {
+			test();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
+	}
+
+	public static void test() throws Exception {
+		try {
+			int i = Integer.parseInt("a");
+		} catch ( Exception e) {
+			throw e;
+		}
 	}
 
 }

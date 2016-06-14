@@ -5,13 +5,17 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.text.Collator;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -229,6 +233,51 @@ public class StringDemo01 {
 			Arrays.sort(strs, comparator);
 			System.out.println(Arrays.toString(strs));
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void testUUID() {
+		String uuid = UUID.randomUUID().toString();
+		System.out.println(uuid.toUpperCase().replaceAll("-", ""));
+
+	}
+
+	@Test
+	public void testFormatDate() {
+		List<String> dateStrs = new LinkedList<String>();
+		for (int i = 0; i < 100; i++) {
+			String dateStr = String.format("%1$tF %1$tT.%1$tL", new Date());
+			dateStrs.add(dateStr);
+			System.out.println(dateStr);
+		}
+	}
+	
+	@Test
+	public void test20160609(){
+		String str = "do,,";
+		String[] strings = str.split(",");
+		for (String string : strings) {
+			System.out.println(string);
+			System.out.println("loop");
+		}
+	}
+	
+	@Test
+	public void formatStr(){
+		String format = "测试 %1$s";
+		System.out.println(String.format(format, 11));
+	}
+	
+	@Test
+	public void encoding(){
+		String str = "中国";
+		try {
+			str = new String(str.getBytes("UTF-8"),"ISO-8859-1");
+			System.out.println(str);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -1,7 +1,9 @@
 package cn.heweiming.javase.script.demo01;
 
 import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import javax.script.Bindings;
@@ -58,6 +60,27 @@ public class ScriptDemo01 {
 			// 得到当前的脚本引擎
 
 			ScriptEngine engine = factory.getScriptEngine();
+		}
+	}
+
+	@Test
+	public void testScript1() {
+		try {
+			ScriptEngine engine = new ScriptEngineManager().getEngineByExtension("js");
+			Bindings bind = engine.createBindings();
+			bind.put("factor", 2);
+			engine.setBindings(bind, ScriptContext.ENGINE_SCOPE);
+			engine.eval(new InputStreamReader(this.getClass().getClassLoader()
+					.getResourceAsStream("script/demo.js")));
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("name", "张三");
+			if (engine instanceof Invocable) {
+				Invocable in = (Invocable) engine;
+				Object result = in.invokeFunction("getUser", map);
+				System.out.println("运算结果：" + result);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

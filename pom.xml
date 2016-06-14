@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cn.heweiming.learn</groupId>
-	<artifactId>javase</artifactId>
+	<artifactId>javase7</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<properties>
@@ -12,16 +12,16 @@
 		<!-- 编译时的编码 -->
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
 
-		<spring.version>4.1.9.RELEASE</spring.version>
+		<spring.version>4.2.6.RELEASE</spring.version>
 		<hibernate.version>4.3.11.Final</hibernate.version>
 
-		<shiro.version>1.2.4</shiro.version>
+		<shiro.version>1.2.5</shiro.version>
 		<activiti.version>5.19.0.2</activiti.version>
-		<cxf.version>3.1.5</cxf.version>
+		<cxf.version>3.1.6</cxf.version>
 		<lucene.version>5.4.1</lucene.version>
 
 		<slf4j.version>1.7.21</slf4j.version>
-		<jackson.version>2.6.5</jackson.version>
+		<jackson.version>2.6.6</jackson.version>
 	</properties>
 
 	<build>
@@ -44,6 +44,11 @@
 					<version>3.0</version>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>3.0.3</version>
 			</plugin>
 		</plugins>
 	</build>
@@ -95,6 +100,23 @@
 			<version>2.5.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.20</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
 
 	</dependencies>
 
