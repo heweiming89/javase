@@ -267,7 +267,11 @@ public class StringDemo01 {
 	@Test
 	public void formatStr(){
 		String format = "测试 %1$s";
-		System.out.println(String.format(format, 11));
+		System.out.println(String.format("范德萨分%10.2f", 100.1));
+		System.out.println(String.format("%b", ""));
+//		System.out.println(String.format("%c", "中"));
+		System.out.println(String.format("%%", 0.5));
+		
 	}
 	
 	@Test
