@@ -5,6 +5,7 @@ import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Date;
@@ -26,9 +27,13 @@ public class StreamDemo01 {
 	}
 	
 	@Test
-	public void testStream01() throws FileNotFoundException{
-		DataInputStream dis = new DataInputStream(new FileInputStream(""));
-		DataOutputStream dos = new DataOutputStream(new FileOutputStream(""));
+	public void testStream01() throws IOException{
+		DataInputStream din = new DataInputStream(new FileInputStream("./log.txt"));
+		int i = -1;
+		while( (i = din.readInt())!= -1){
+			System.out.println(i);
+		}
+//		DataOutputStream dout = new DataOutputStream(new FileOutputStream(""));
 		
 	}
 }

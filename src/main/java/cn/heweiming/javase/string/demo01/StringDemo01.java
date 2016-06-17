@@ -285,5 +285,16 @@ public class StringDemo01 {
 			e.printStackTrace();
 		}
 	}
+	
+	
+	@Test
+	public void testPattern02(){
+		String str = "abc";
+		Pattern pattern = Pattern.compile("[a-z]*+bc");
+		Matcher matcher = pattern.matcher(str);
+		System.out.println(matcher.matches());
+		
+		
+	}
 
 }
